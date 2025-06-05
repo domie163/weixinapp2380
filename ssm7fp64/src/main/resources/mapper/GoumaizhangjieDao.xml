@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.GoumaizhangjieDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.GoumaizhangjieEntity" id="goumaizhangjieMap">
+        <result property="shujimingcheng" column="shujimingcheng"/>
+        <result property="fenlei" column="fenlei"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="jiage" column="jiage"/>
+        <result property="goumairiqi" column="goumairiqi"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="ispay" column="ispay"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.GoumaizhangjieVO" >
+		SELECT * FROM goumaizhangjie  goumaizhangjie         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.GoumaizhangjieVO" >
+		SELECT  goumaizhangjie.* FROM goumaizhangjie  goumaizhangjie
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.GoumaizhangjieView" >
+
+		SELECT  goumaizhangjie.* FROM goumaizhangjie  goumaizhangjie 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.GoumaizhangjieView" >
+		SELECT * FROM goumaizhangjie  goumaizhangjie <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
